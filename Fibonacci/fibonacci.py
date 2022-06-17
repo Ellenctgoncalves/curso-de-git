@@ -19,13 +19,15 @@ def calcular_fibonacci(numero):
 def consta_em_fibonacci(numero):
 	sequencia_fibonacci = calcular_fibonacci(numero)
 
-	if sequencia_fibonacci.count(numero) > 0:
-		return "consta em Fibonacci"
+	if numero in sequencia_fibonacci:
+		return True
 	else:
-		return "não consta em Fibonacci"
+		return False
 
 if __name__ == '__main__':
     
-    numero = int(input("Digite um número inteiro: "))
-
-    print(consta_em_fibonacci(numero))
+    try:
+    	numero = int(input("Digite um número inteiro: "))
+    	print(f'Consta em Fibonacci:', consta_em_fibonacci(numero))
+    except (ValueError, TypeError):
+    	print("A sequencia Fibonacci apenas conta com números inteiros")
