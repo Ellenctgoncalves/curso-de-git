@@ -11,8 +11,6 @@ def calcular_fibonacci(numero):
         
         if proximo_numero <= numero:
         	sequencia.append(proximo_numero)
-        else:
-        	break
 
     return sequencia
 
